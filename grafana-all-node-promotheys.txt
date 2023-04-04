@@ -1,0 +1,62 @@
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9100']
+
+
+
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['localhost:9100']
+---------------------------------------------
+   1  cd
+    2  vi promotheus.sh
+    3  chmod 777 promotheus.sh o
+    4  chmod 777 promotheus.sh
+    5  ./promotheus.sh
+    6  vi grafana.sh
+    7  chmod 777 grafana.sh
+    8  ./grafana.sh
+    9  ps aux |grep prom
+   10  kill-HUP 2390
+   11  kill -HUP 2390
+   12  systemctl daemon-reload
+   13  systemctl enable prometheus
+   14  systemctl start prometheus
+   15  cd /etc
+   16  cd prometheus/
+   17  ls -latr
+   18  vi prometheus.yml
+   19  kill -HUP 2390
+   20  systemctl start prometheus
+   21  vi prometheus.yml
+   22  promtool check config prometheus.yml
+   23  vi prometheus.yml
+   24  promtool check config prometheus.yml
+   25  vi prometheus.yml
+   26  promtool check config prometheus.yml
+   27  kill -HUP 2390
+   28  systemctl start prometheus
+   29  systemctl status prometheus
+   30  history
+----------------------------------------------
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+      - targets: ['localhost:9090']
+
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+       - targets: ['172.31.93.154:9100']
+
+----------------------------------------------------
+
+
+-----------------------------------------------
